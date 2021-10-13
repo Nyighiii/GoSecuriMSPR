@@ -5,11 +5,12 @@
 
 <jsp:include page="header.jsp" />
 
-
+<div style="text-align:center;">
 <h1>Rendre et emprunter</h1>
 
 <div>
-	<img src="img/logo.jpg" />
+	<img id="logo1" src="./img/logo.png" alt="Logo Go Securi" 
+			style="width:538px;height:420px;"/>
 </div>
 <div class="container">
 
@@ -18,8 +19,6 @@
 	</div>
 	<form method="post" action="materiel">
 
-
-		<div class="row">
 
 			<div>
 				<c:forEach items="${materiels}" var="materiel">
@@ -34,25 +33,21 @@
 					<label for="${materiel.id}">${materiel.nom} Quantité en
 						Stock : ${materiel.qteEnStock}</label>
 					<br />
+					<br />
 				</c:forEach>
 
 			</div>
 
-		</div>
 		<input type="submit" value="Valider et quitter" class="submitBtn" />
 	</form>
 </div>
-
-<p>
-				Pour accéder à la console Admin, cliquez <a href="userscreation">ICI</a></a>
-			</p>
 
 
 <div>
 	<c:choose>
 		<c:when test="${user.isAdmin == true}">
 			<p>
-				Pour accéder à la console Admin, cliquez <a href="usersCreation">ICI</a></a>
+				Pour accéder à la console Admin, cliquez <a href="usersCreation">ICI</a>
 			</p>
 		</c:when>
 	</c:choose>

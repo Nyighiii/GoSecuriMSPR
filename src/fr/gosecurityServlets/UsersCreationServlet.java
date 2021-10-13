@@ -48,7 +48,7 @@ public class UsersCreationServlet extends HttpServlet {
 
 
 
-		this.getServletContext().getRequestDispatcher("/WEB-INF/usersCreation.jsp").forward(request, response);
+		this.getServletContext().getRequestDispatcher("/WEB-INF/userscreation.jsp").forward(request, response);
 	}
 
 	/**

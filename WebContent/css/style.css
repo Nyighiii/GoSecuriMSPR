@@ -1,0 +1,85 @@
+@charset "ISO-8859-1";
+h1
+{
+	font-family: Roboto, sans-serif;
+	font-size: 100px;
+	font-weight: medium;
+	color: #379EC1;
+	margin-bottom: 50px;
+}
+
+h2
+{
+	font-family: Roboto, sans-serif;
+	font-weight: medium;
+	color: #659224;
+	font-size: 50px;
+	margin-top: 50px;
+	margin-bottom: 30px;
+}
+
+body
+{
+	background-color: white;
+}
+
+
+/*Style des inputChamp de toutes les pages jsp*/
+.inputChamp
+{
+	background-color: #659224;
+	height: 0px;
+	width: 300px;
+	margin-top: 7px;
+	margin-bottom: 10px;
+	color: black;
+	font-family: Roboto, sans-serif;
+	font-size: medium;
+	font-weight: lighter;
+	border: 0px;
+	padding: 25px;
+}
+
+/*Style des inputChamp de toutes les pages jsp*/
+#chkmateriel
+{
+
+	font-family: Roboto, sans-serif;
+	font-size: medium;
+	font-weight: lighter;
+	
+}
+
+
+
+/*Style des bouttons de toutes les pages jsp*/
+.submitBtn, .button, button, #bouton1, #bouton2, #sauvegarder
+{
+	background-color: #379EC1;
+	color: black;
+	font-family: Roboto, sans-serif;
+	font-weight: medium;
+	font-size: 20px;
+	border-radius: 25px;
+	border: 0;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-left: 20px;
+	padding-right: 20px;
+	cursor: pointer;
+}
+
+/*Affichage du nom de la personne dans materialChoice.jsp*/
+#styleNom 
+{
+	font-size: 20px;
+	font-weight: 400;
+}
+
+p
+{
+	color: black;
+	font-family: Roboto, sans-serif;
+	font-size: medium;
+	font-weight: lighter;
+}

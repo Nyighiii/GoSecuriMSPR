@@ -3,13 +3,15 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 <jsp:include page="header.jsp" />
-	<h1>inscription</h1>
+
+
+<div style="text-align:center;">
+	<h1>Inscription</h1>
 	
 	<div>
 		<img src="img/logo.jpg" />
 	</div>
-	
-	<h1>Inscription</h1>
+
 <div id="inscription">
 	<form method="post" action="userscreation" id="inscription">
 		<input 

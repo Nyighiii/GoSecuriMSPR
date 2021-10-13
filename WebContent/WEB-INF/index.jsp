@@ -5,20 +5,19 @@
 
 <jsp:include page="header.jsp" />
 
-
+<div style="text-align:center;">
 	<h1>Bienvenue</h1>
 	
 	<div>
-		<img src="img/logo.jpg" />
-	</div>
-	
-	<div class="container">
-	<div class="row">
-		<div class="col-sm-4">
-			<a href="identification" >Identification</a>
+		<img id="logo1" src="./img/logo.png" alt="Logo Go Securi" 
+			style="width:538px;height:420px;"/>	
+			
+	<div >
+		<div >
+			<a href="identification" ><h2>Identification</h2></a>
 		</div>
-		<div class="col-sm-4">
-			<a href="facialRecognation" >Reconnaissance faciale</a>
+		<div>
+			<a href="facialRecognation" ><h2>Reconnaissance faciale</h2></a>
 		</div>
 	</div>
 	</div>
