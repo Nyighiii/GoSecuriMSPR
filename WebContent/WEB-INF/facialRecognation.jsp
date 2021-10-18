@@ -4,6 +4,13 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 <jsp:include page="header.jsp" />
+
+<div>
+			<button  id="bouton3"
+				onclick="window.location.href='<%=request.getContextPath()%>/index'">
+				Retour à l'accueil</button>
+		</div>
+		
 <div style="text-align:center;">
 	<h1>Reconnaissance faciale</h1>
 		

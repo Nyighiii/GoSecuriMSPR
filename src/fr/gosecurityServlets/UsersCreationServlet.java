@@ -55,7 +55,7 @@ public class UsersCreationServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+		HttpSession session = request.getSession();
 		Firestore db = getFbDao();
 
 		UserCreationDao userCreateDao = getUserCreationDao(db);
@@ -76,9 +76,11 @@ public class UsersCreationServlet extends HttpServlet {
 		
 		User newUser = new User(nom, prenom, login, password,dob, photo, isAdmin );
 		userCreateDao.insert(newUser);
-		}
+		
 
-
+	session.removeAttribute("user");	
+	this.getServletContext().getRequestDispatcher("/WEB-INF/index.jsp").forward(request, response);
+	}
 
 public Firestore getFbDao() {
 	ServletContext cont = getServletContext();
