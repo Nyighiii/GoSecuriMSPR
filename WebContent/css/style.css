@@ -43,10 +43,8 @@ body
 /*Style des inputChamp de toutes les pages jsp*/
 #chkmateriel
 {
-
 	font-family: Roboto, sans-serif;
-	font-size: medium;
-	font-weight: lighter;
+
 	
 }
 
@@ -79,6 +77,14 @@ body
 p
 {
 	color: black;
+	font-family: Roboto, sans-serif;
+	font-size: medium;
+	font-weight: lighter;
+}
+
+.erreurs
+{
+	color: red;
 	font-family: Roboto, sans-serif;
 	font-size: medium;
 	font-weight: lighter;

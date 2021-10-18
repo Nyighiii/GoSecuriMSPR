@@ -112,9 +112,8 @@ public class MaterielServlet extends HttpServlet {
 			mouvDao.insert(mouvement);
 
 		}
-
-		session.removeAttribute("user");
 		
+		session.removeAttribute("user");	
 		this.getServletContext().getRequestDispatcher("/WEB-INF/index.jsp").forward(request, response);
 
 	}
@@ -127,7 +126,7 @@ public class MaterielServlet extends HttpServlet {
 			String contextPath = cont.getRealPath("/WEB-INF");
 			currentDao = new FireBaseDao(contextPath).getDbConnexion();
 			cont.setAttribute("myDb", currentDao);
-			System.out.println("Connection avec Firebase OK !!!!");
+			System.out.println("Connexion avec Firebase OK !!!!");
 		}
 		return currentDao;
 	}

@@ -8,9 +8,10 @@
 <div style="text-align:center;">
 	<h1>Inscription</h1>
 	
-	<div>
-		<img src="img/logo.jpg" />
-	</div>
+<div>
+	<img id="logo1" src="./img/logo.png" alt="Logo Go Securi" 
+			style="width:538px;height:420px;"/>
+</div>
 
 <div id="inscription">
 	<form method="post" action="userscreation" id="inscription">

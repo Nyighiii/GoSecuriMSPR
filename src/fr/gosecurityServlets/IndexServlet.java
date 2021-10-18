@@ -54,7 +54,7 @@ public class IndexServlet extends HttpServlet {
 			String contextPath = cont.getRealPath("/WEB-INF");
 			currentDao = new FireBaseDao(contextPath).getDbConnexion();
 			cont.setAttribute("myDb", currentDao);
-			System.out.println("Connection avec Firebase OK !!!!");
+			System.out.println("Connexion avec Firebase OK !!!!");
 		}
 		
 		

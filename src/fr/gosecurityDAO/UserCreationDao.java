@@ -61,7 +61,7 @@ public class UserCreationDao {
 	}
 
 	public void insert(User user) {
-		DocumentReference docRef = db.collection("Users").document();
+		DocumentReference docRef = db.collection("Users").document(user.getLogin());
 
 		Map<String, Object> data = new HashMap<>();
 		data.put("nom", user.getNom());

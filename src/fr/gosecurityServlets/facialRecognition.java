@@ -27,7 +27,9 @@ public class facialRecognition extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-
+		String title = "Photo connection";
+		request.setAttribute("title", title);
+		
 		this.getServletContext().getRequestDispatcher("/WEB-INF/facialRecognation.jsp").forward(request, response);
 	}
 
@@ -40,3 +42,5 @@ public class facialRecognition extends HttpServlet {
 	}
 
 }
+
+

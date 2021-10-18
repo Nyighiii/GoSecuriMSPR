@@ -68,11 +68,14 @@ public class UsersCreationServlet extends HttpServlet {
 		String password = request.getParameter("password");
 		// Attention conversion date pour récupérer les paramètres de saisie
 		String photo = request.getParameter("photo");
-		// Boolean isAdmin = request.getParameter("IsAdmin");
+		Boolean isAdmin = request.getParameter("IsAdmin") != null;
+		String login = request.getParameter("login");
+		Date dob = new Date();
+
 		
 		
-		User newUser = new User();
-		userCreateDao.createNewUser(newUser);
+		User newUser = new User(nom, prenom, login, password,dob, photo, isAdmin );
+		userCreateDao.insert(newUser);
 		}
 
 

@@ -2,6 +2,7 @@ package fr.gosecurityServlets;
 
 import java.io.IOException;
 import java.util.Date;
+import java.util.concurrent.ExecutionException;
 
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
@@ -53,16 +54,24 @@ public class IdentificationServlet extends HttpServlet {
 		HttpSession session = request.getSession();
 
 		// gestion des erreurs dans le formulaire
+		
 		String pseudo = request.getParameter("pseudo");
 		if (pseudo.isEmpty()) {
-			erreurs +="merci de remplir le champ peudo<br>";
+			erreurs +="merci de remplir le champ pseudo<br>";
 		}
+		if(!erreurs.isEmpty()) {
+			
+			// renvoie les messages d'erreurs 
+			request.setAttribute("erreurs", erreurs);
+			
+			this.getServletContext().getRequestDispatcher("/WEB-INF/identification.jsp").forward(request, response);
+		}
+		
+		
 		String mdp = request.getParameter("mdp");
-		if (mdp.isEmpty()) {
+		if  (mdp.isEmpty()) {
 			erreurs +="merci de remplir le champ mot de passe<br>";
 		}
-
-
 
 		
 		
@@ -70,15 +79,25 @@ public class IdentificationServlet extends HttpServlet {
 		
 		UserDao uDao = getUserDao(db);
 		
-		User u = uDao.getUserByLoginPassword(pseudo);
 		
-		if(u.getPassword() != null && u.getPassword().equals(mdp)) {
-			session.setAttribute("user", u);
+		User u;
+		try {
+			u = uDao.getUser(pseudo, mdp);
+			if(u.getPassword() != null && u.getPassword().equals(mdp)) {
+				session.setAttribute("user", u);
+				
+				response.sendRedirect(request.getContextPath() + "/materiel");
+			}
+			else {
+				erreurs +="Identification impossible<br>";
+			}
 			
-			response.sendRedirect(request.getContextPath() + "/materiel");
-		}
-		else {
-			erreurs +="Identification impossible<br>";
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (ExecutionException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
 		
 		if(!erreurs.isEmpty()) {

@@ -4,7 +4,13 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 <jsp:include page="header.jsp" />
-
+<div>
+			<button  id="bouton3"
+				onclick="window.location.href='<%=request.getContextPath()%>/index'">
+				Retour à l'accueil</button>
+		</div>
+		
+		
 <div style="text-align:center;">
 <h1>Rendre et emprunter</h1>
 
@@ -12,6 +18,8 @@
 	<img id="logo1" src="./img/logo.png" alt="Logo Go Securi" 
 			style="width:538px;height:420px;"/>
 </div>
+
+
 <div class="container">
 
 	<div>
@@ -37,6 +45,7 @@
 				</c:forEach>
 
 			</div>
+			
 
 		<input type="submit" value="Valider et quitter" class="submitBtn" />
 	</form>
@@ -47,7 +56,7 @@
 	<c:choose>
 		<c:when test="${user.isAdmin == true}">
 			<p>
-				Pour accéder à la console Admin, cliquez <a href="usersCreation">ICI</a>
+				Pour accéder à la console Admin, cliquez <a href="userscreation">ICI</a>
 			</p>
 		</c:when>
 	</c:choose>
